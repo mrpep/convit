@@ -72,9 +72,6 @@ class AudiosetDataset(Dataset):
         if self.specaugment['t'] != 0:
             fbank = timem(fbank)
         fbank = torch.transpose(fbank, 0, 1)
+        fbank = torch.unsqueeze(fbank,0)
 
         return fbank, row['target']
-
-BALANCED_SET_METADATA = 'http://storage.googleapis.com/us_audioset/youtube_corpus/v1/csv/balanced_train_segments.csv'
-BALANCED_WAV_DIR = '/home/ubuntu/Datasets/Audioset/balanced_set'
-EVALUATION_SET_METADATA = 'http://storage.googleapis.com/us_audioset/youtube_corpus/v1/csv/eval_segments.csv'

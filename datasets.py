@@ -130,7 +130,6 @@ class ImageNetDataset(SubsampledDatasetFolder):
                                               is_valid_file=is_valid_file, **kwargs)
         self.imgs = self.samples
 
-
 def build_dataset(is_train, args):
     transform = build_transform(is_train, args)
 
